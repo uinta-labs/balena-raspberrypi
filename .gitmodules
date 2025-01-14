@@ -13,7 +13,7 @@
 [submodule "layers/meta-balena"]
 	path = layers/meta-balena
 	url = https://github.com/uinta-labs/meta-balena.git
-	branch = master
+	branch = wip
 [submodule "balena-yocto-scripts"]
 	path = balena-yocto-scripts
 	url = https://github.com/balena-os/balena-yocto-scripts.git
