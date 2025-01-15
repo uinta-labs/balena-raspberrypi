@@ -3,7 +3,7 @@
 # https://www.raspberrypi.org/documentation/hardware/computemodule/cm-emmc-flashing.md
 BALENA_BOOT_FAT32 = "1"
 
-IMAGE_FSTYPES:append:rpi = " balenaos-img"
+IMAGE_FSTYPES:append:rpi = " uintaos-img"
 
 # Kernel image name is different on Raspberry Pi 1/2/3-64bit
 SDIMG_KERNELIMAGE:raspberrypi  ?= "kernel.img"
@@ -29,7 +29,7 @@ IMAGE_OVERHEAD_FACTOR:revpi-connect-4 ?= "1.0"
 IMAGE_ROOTFS_EXTRA_SPACE:revpi-connect-4 ?= "53248"
 IMAGE_ROOTFS_MAXSIZE:revpi-connect-4 ?= "372736"
 
-# Customize balenaos-img
+# Customize uintaos-img
 BALENA_IMAGE_BOOTLOADER:rpi = "rpi-bootfiles"
 BALENA_BOOT_PARTITION_FILES:rpi = " \
     u-boot.bin:/${SDIMG_KERNELIMAGE} \
@@ -110,9 +110,9 @@ IMAGE_INSTALL:remove:raspberrypi5 = " u-boot"
 IMAGE_INSTALL:append:raspberrypi5 = " grub-editenv"
 
 do_rootfs[depends] += "${@oe.utils.conditional('MACHINE','raspberrypicm4-ioboard-sb',' virtual/balena-bootloader:do_deploy','',d)}"
-do_image_balenaos_img[depends] += "${@oe.utils.conditional('MACHINE','raspberrypicm4-ioboard-sb',' virtual/balena-bootloader:do_deploy','',d)}"
+do_image_uintaos_img[depends] += "${@oe.utils.conditional('MACHINE','raspberrypicm4-ioboard-sb',' virtual/balena-bootloader:do_deploy','',d)}"
 do_rootfs[depends] += "${@oe.utils.conditional('MACHINE','raspberrypi5',' virtual/balena-bootloader:do_deploy','',d)}"
-do_image_balenaos_img[depends] += "${@oe.utils.conditional('MACHINE','raspberrypi5',' virtual/balena-bootloader:do_deploy','',d)}"
+do_image_uintaos_img[depends] += "${@oe.utils.conditional('MACHINE','raspberrypi5',' virtual/balena-bootloader:do_deploy','',d)}"
 
 do_resin_boot_dirgen_and_deploy[depends] += "virtual/kernel:do_install"
 

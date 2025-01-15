@@ -10,19 +10,15 @@ module.exports =
 	state: 'new'
 
 	instructions: commonImg.instructions
-	gettingStartedLink:
-		windows: 'https://www.balena.io/docs/learn/getting-started/raspberrypi400/nodejs/'
-		osx: 'https://www.balena.io/docs/learn/getting-started/raspberrypi400/nodejs/'
-		linux: 'https://www.balena.io/docs/learn/getting-started/raspberrypi400/nodejs/'
 
 	options: [ networkOptions.group ]
 
 	yocto:
 		machine: 'raspberrypi400-64'
-		image: 'balena-image'
-		fstype: 'balenaos-img'
+		image: 'uinta-image'
+		fstype: 'uintaos-img'
 		version: 'yocto-kirkstone'
-		deployArtifact: 'balena-image-raspberrypi400-64.balenaos-img'
+		deployArtifact: 'uinta-image-raspberrypi400-64.uintaos-img'
 		compressed: true
 
 	configuration:

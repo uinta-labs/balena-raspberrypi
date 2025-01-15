@@ -12,7 +12,7 @@ module.exports =
 	aliases: [ 'fincm3' ]
 	name: 'Balena Fin (CM3)'
 	arch: 'aarch64'
-	state: 'discontinued'
+	state: 'active'
 
 	instructions: [
 	 	FIN_DEBUG
@@ -22,19 +22,14 @@ module.exports =
 		instructions.CONNECT_AND_BOOT
 	]
 
-	gettingStartedLink:
-		windows: 'https://www.balena.io/docs/learn/getting-started/fincm3/nodejs/'
-		osx: 'https://www.balena.io/docs/learn/getting-started/fincm3/nodejs/'
-		linux: 'https://www.balena.io/docs/learn/getting-started/fincm3/nodejs/'
-
 	options: [ networkOptions.group ]
 
 	yocto:
 		machine: 'fincm3'
-		image: 'balena-image'
-		fstype: 'balenaos-img'
+		image: 'uinta-image'
+		fstype: 'uintaos-img'
 		version: 'yocto-kirkstone'
-		deployArtifact: 'balena-image-fincm3.balenaos-img'
+		deployArtifact: 'uinta-image-fincm3.uintaos-img'
 		compressed: true
 
 	configuration:
